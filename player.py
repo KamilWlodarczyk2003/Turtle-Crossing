@@ -14,5 +14,8 @@ class Player(Turtle):
         self.shapesize()
         self.goto(STARTING_POSITION)
         
+    def restart(self):
+        self.goto(STARTING_POSITION)
+        
     def move(self):
         self.goto(0,self.ycor()+MOVE_DISTANCE)

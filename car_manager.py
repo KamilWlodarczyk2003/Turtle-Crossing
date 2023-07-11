@@ -7,7 +7,8 @@ from random import choice,randint
 
 class CarManager(Turtle):
     
-    def __init__(self):
+    def __init__(self,level):
+        self.speed=STARTING_MOVE_DISTANCE+(level-1)*STARTING_MOVE_DISTANCE
         super().__init__()
         self.shape("square")
         self.color(choice(COLORS))
@@ -16,4 +17,4 @@ class CarManager(Turtle):
         self.goto(300,randint(-300,300))
         
     def move(self):
-        self.goto(self.xcor()-STARTING_MOVE_DISTANCE,self.ycor())
+        self.goto(self.xcor()-self.speed,self.ycor())
